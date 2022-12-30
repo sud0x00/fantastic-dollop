@@ -1,10 +1,16 @@
-from sklearn.tree import DecisionTreeClassifier
+from sklearn import tree
+
+# Training data
+X = [[0, 0], [1, 1]]
+y = [0, 1]
 
 # Create a decision tree classifier
-clf = DecisionTreeClassifier()
+clf = tree.DecisionTreeClassifier()
 
 # Train the classifier using the training data
-clf.fit(X_train, y_train)
+clf = clf.fit(X, y)
 
-# Make predictions on the test data
-predictions = clf.predict(X_test)
+# Make predictions on test data
+X_test = [[2, 2], [3, 3]]
+y_pred = clf.predict(X_test)
+print(y_pred)  # Output: [1, 1]
